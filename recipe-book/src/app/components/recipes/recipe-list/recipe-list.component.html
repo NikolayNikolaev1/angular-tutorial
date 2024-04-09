@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success">New recipe</button>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-xs-12">
+    <a *ngFor="let recipe of recipes" href="#" class="list-group-item clearfix">
+      <app-recipe-item [recipe]="recipe" />
+    </a>
+  </div>
+</div>
