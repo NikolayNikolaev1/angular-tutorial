@@ -6,7 +6,7 @@
 <hr />
 <div class="row">
   <div class="col-xs-12">
-    <a *ngFor="let recipe of recipes" href="#" class="list-group-item clearfix">
+    <a *ngFor="let recipe of recipes" class="list-group-item clearfix" (click)="onSelect(recipe)">
       <app-recipe-item [recipe]="recipe" />
     </a>
   </div>
