@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import Recipe from '../../../../models/recipe';
+import { RecipeService } from '../../../../services/recipe.service';
 
 @Component({
   selector: 'app-recipe-item',
@@ -7,5 +8,11 @@ import Recipe from '../../../../models/recipe';
   styleUrl: './recipe-item.component.css',
 })
 export class RecipeItemComponent {
-  @Input('recipe') recipe: Recipe;
+  @Input() recipe: Recipe;
+
+  constructor(private recipeService: RecipeService) {}
+
+  onSelect() {
+    this.recipeService.recipeOnClick(this.recipe);
+  }
 }
